@@ -52,7 +52,7 @@ namespace SumaYRestaMatricezAlgebraLineal
 				_string.Append("| ");
 			for (int f = 0; f < fila; f++)
 				{
-					_string.Append(matriz[f, c]+((matriz[f, c] > 9) ? " | ": "  | "));
+					_string.Append(matriz[f, c]+((matriz[f, c].ToString().Length == 2) ? " | ": "  | "));
 				}
 				_string.Append("\n");
 			}
@@ -79,6 +79,19 @@ namespace SumaYRestaMatricezAlgebraLineal
 				for (int f = 0; f < fila; f++)
 				{
 					_newMatriz[f,c] = a.ToMatriz()[f,c] + b.ToMatriz()[f, c];
+				}
+			}
+			return new Matriz(_newMatriz);
+		}
+
+		public static Matriz operator -(Matriz a, Matriz b)
+		{
+			int[,] _newMatriz = new int[fila, columna];
+			for (int c = 0; c < columna; c++)
+			{
+				for (int f = 0; f < fila; f++)
+				{
+					_newMatriz[f, c] = a.ToMatriz()[f, c] - b.ToMatriz()[f, c];
 				}
 			}
 			return new Matriz(_newMatriz);

@@ -12,7 +12,9 @@ namespace SumaYRestaMatricezAlgebraLineal
 			Matriz b = new Matriz(4);
 			Console.WriteLine(a+" otra\n"+b);
 			Matriz c = a + b;
+			Matriz d = a - b;
 			Console.WriteLine(c);
+			Console.WriteLine(d);
 		}
 	}
 }
